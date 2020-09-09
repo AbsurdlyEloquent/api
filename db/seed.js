@@ -24,8 +24,8 @@ function filter(data) {
       private: item.private,
       owner: {
         user: item.login,
-        avatar_url: item.avatar_url,
-        url: item.html_url
+        avatar_url: item.owner.avatar_url,
+        url: item.owner.html_url
       },
       url: item.html_url,
       description: item.description,
