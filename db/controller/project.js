@@ -8,15 +8,14 @@ module.exports = {
       })
   },
   byName: (req, res)=> {
-    Project.find({name: req.params.name})
-      .then(project=> {
-        res.json(project)
-      })
-  },
-  byLang: (req, res)=> {
-    Project.find({language: req.params.lang})
-      .then(projects=> {
-        res.json(projects)
-      })
+    let name = req.query.name
+    let lang = req.query.lang
+    if (name) {
+      Project.find({name: name})
+      .then(project=> res.json(project))
+    } else if (lang) {
+      Project.find({language: lang})
+      .then(projects=> res.json(projects))
+    }
   }
 }
