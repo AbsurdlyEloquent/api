@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@octokit/request": "^5.4.7",
     "@types/express": "^4.17.8",
     "mongoose": "^5.10.3"
   }
