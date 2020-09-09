@@ -1,7 +1,7 @@
 const mongoose = require('../connection')
 
-module.exports = mongoose.model('User', new mongoose.Schema({
-  login: String,
+module.exports = new mongoose.Schema({
+  user: String,
   avatar_url: String,
-  html_url: String,
-}))
+  url: String,
+})

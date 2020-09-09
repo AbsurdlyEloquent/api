@@ -6,7 +6,7 @@ module.exports = mongoose.model('Project', new mongoose.Schema({
   full_name: String,
   private: Boolean,
   owner: User,
-  html_url: String,
+  url: String,
   description: String,
   homepage: String,
   language: String,
