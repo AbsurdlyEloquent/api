@@ -1,7 +1,10 @@
 const mongoose = require('mongoose')
 
+let mongoURI = process.env.DB_URL
+console.log(mongoURI)
+
 mongoose
-  .connect(process.env.DB_URL, {
+  .connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
