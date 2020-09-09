@@ -19,7 +19,7 @@ function filter(data) {
   console.log(data)
   return data.map(item=> {
     return {
-      name: item.name,
+      name: item.owner.name,
       fullName: item.full_name,
       private: item.private,
       owner: {
