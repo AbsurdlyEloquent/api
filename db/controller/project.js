@@ -2,6 +2,7 @@ const Project = require('../models/Project')
 
 module.exports = {
   index: (req, res)=> {
+    console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
     Project.find({})
       .then(projects=> {
         res.json(projects)
