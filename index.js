@@ -7,7 +7,9 @@ app.use(express.json())
 
 app.use(router)
 
-let server = app.listen(3000)
+app.set('port', process.env.PORT || 8080)
+
+let server = app.listen(app.get('port'))
 
 server.on('listening', ()=> {
   console.log('🤔 Server ready on port: 3000')
