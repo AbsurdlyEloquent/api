@@ -9,6 +9,7 @@ module.exports = {
       })
   },
   byName: (req, res)=> {
+    console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
     let name = req.query.name
     let lang = req.query.lang
     if (name) {
