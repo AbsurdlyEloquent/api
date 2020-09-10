@@ -12,7 +12,7 @@ app.set('port', process.env.PORT || 8080)
 let server = app.listen(app.get('port'))
 
 server.on('listening', ()=> {
-  console.log(`🤔 Server ready on port: ${process.env.PORT}`)
+  console.log(`🤔 Server ready on port: ${app.get('port')}`)
 })
 
 server.on('error', (err)=> {
