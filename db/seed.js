@@ -7,7 +7,6 @@ async function getData() {
     let res = await request("GET https://api.github.com/users/AbsurdlyEloquent/repos")
     let data = res.data
     let filtered = filter(data)
-    console.log(filtered)
     seed(filtered)
   }
   catch (err) {
@@ -16,7 +15,6 @@ async function getData() {
 }
 
 function filter(data) {
-  console.log(data)
   return data.map(item=> {
     return {
       name: item.owner.name,
@@ -37,7 +35,6 @@ function filter(data) {
 }
 
 function seed(data) {
-  console.log(data)
   Project
     .deleteMany()
     .then(()=> Project.create(data))
