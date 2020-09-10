@@ -18,7 +18,7 @@ async function getData() {
 function filter(data) {
   return data.map(item=> {
     return {
-      name: item.owner.name,
+      name: item.name,
       fullName: item.full_name,
       private: item.private,
       owner: {
