@@ -8,7 +8,7 @@ module.exports = {
         res.json(projects)
       })
   },
-  byName: (req, res)=> {
+  byProp: (req, res)=> {
     console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
     let name = req.query.name
     let lang = req.query.lang
@@ -19,5 +19,10 @@ module.exports = {
       Project.find({language: lang})
       .then(projects=> res.json(projects))
     }
+  },
+  postRepo: (req, res)=> {
+    console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
+    Project.create(req.params)
+    .then(project=> res.json(project))
   }
 }
