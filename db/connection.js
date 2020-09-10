@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+console.log(process.env.DB_URL)
 let mongoURI = process.env.DB_URL
 console.log(mongoURI)
 

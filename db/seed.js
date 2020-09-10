@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Project = require('./models/Project')
 const { request } = require('@octokit/request')
 
