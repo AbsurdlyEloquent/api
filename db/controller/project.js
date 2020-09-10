@@ -27,5 +27,15 @@ module.exports = {
     Project.create(req.query)
       .then(project=> res.json(project))
       .catch(err=> console.error(err))
+  },
+  putRepo: (req, res)=> {
+    console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
+    Project.findOneAndUpdate(req.params, req.query)
+      .then(project=> res.json(project))
+  },
+  delete: (req, res)=> {
+    console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
+    Project.findOneAndDelete(req.params)
+      .then(project=> res.json(project))
   }
 }
