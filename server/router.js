@@ -5,6 +5,6 @@ const router = new express.Router()
 
 router.get('/', controller.index)
 router.get('/q?', controller.byProp)
-router.post('/:name/', controller.postRepo)
+router.post('/:name/p?', controller.postRepo)
 
 module.exports = router
