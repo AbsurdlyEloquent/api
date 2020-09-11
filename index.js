@@ -5,7 +5,11 @@ const router = require('./server/router')
 const app = express();
 app.use(express.json())
 
-app.use(router)
+app.use('/projects', router)
+
+app.get('/', (req, res)=> {
+  res.redirect('/projects')
+})
 
 app.set('port', process.env.PORT || 8080)
 

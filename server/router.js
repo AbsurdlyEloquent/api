@@ -5,8 +5,8 @@ const router = new express.Router()
 
 router.get('/', controller.index)
 router.get('/q?', controller.byProp)
-router.post('/:name/p?', controller.postRepo)
-router.put('/:name/p?', controller.putRepo)
+router.post('/', controller.postRepo)
+router.put('/', controller.putRepo)
 router.delete('/:name', controller.delete)
 
 module.exports = router

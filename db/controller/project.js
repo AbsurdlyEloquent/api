@@ -23,8 +23,7 @@ module.exports = {
   },
   postRepo: (req, res)=> {
     console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
-    req.query.name = req.params.name
-    Project.create(req.query)
+    Project.create(req.body)
       .then(project=> res.json(project))
       .catch(err=> console.error(err))
   },
