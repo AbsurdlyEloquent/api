@@ -4,7 +4,7 @@ const cors = require('cors')
 const router = require('./server/router')
 
 const corsOptions = {
-  origin: 'https://absurdlyeloquent.github.io',
+  origin: ['https://absurdlyeloquent.github.io', '::ffff:10.35.250.120:3000'],
   optionSuccessStatus: 200
 }
 
