@@ -4,9 +4,9 @@ const controller = require('../db/controller/project')
 const router = new express.Router()
 
 router.get('/?', controller.index)
-router.get('/:id', controller.findById)
-router.post('/', controller.postRepo)
-router.put('/', controller.putRepo)
+router.get('/:id', controller.read)
+router.post('/', controller.create)
+router.put('/:id', controller.update)
 router.delete('/:name', controller.delete)
 
 module.exports = router

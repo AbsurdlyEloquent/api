@@ -19,20 +19,20 @@ module.exports = {
         .catch(err=> console.error(err))
     }
   },
-  findById: (req, res)=> {
-    Project.findById(req.params.id)
-      .then(project=> res.json(project))
-      .catch(err=> console.error(err))
-  },
-  postRepo: (req, res)=> {
+  create: (req, res)=> {
     console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
     Project.create(req.body)
       .then(project=> res.json(project))
       .catch(err=> console.error(err))
   },
-  putRepo: (req, res)=> {
+  read: (req, res)=> {
+    Project.findById(req.params.id)
+    .then(project=> res.json(project))
+    .catch(err=> console.error(err))
+  },
+  update: (req, res)=> {
     console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
-    Project.findOneAndUpdate(req.params, req.query)
+    Project.findOneAndUpdate(req.params.id, req.body)
       .then(project=> res.json(project))
   },
   delete: (req, res)=> {
