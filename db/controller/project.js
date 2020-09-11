@@ -12,11 +12,15 @@ module.exports = {
     let name = req.query.name
     let lang = req.query.lang
     if (name) {
-      Project.find({name: name})
+      Project.find({name: name, language: lang})
         .then(project=> res.json(project))
         .catch(err=> console.error(err))
     } else if (lang) {
       Project.find({language: lang})
+        .then(projects=> res.json(projects))
+        .catch(err=> console.error(err))
+    } else {
+      Project.find()
         .then(projects=> res.json(projects))
         .catch(err=> console.error(err))
     }
