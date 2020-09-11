@@ -32,12 +32,12 @@ module.exports = {
   },
   update: (req, res)=> {
     console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
-    Project.findOneAndUpdate(req.params.id, req.body)
+    Project.findOneAndUpdate({ _id:req.params.id }, req.body)
       .then(project=> res.json(project))
   },
   delete: (req, res)=> {
     console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
-    Project.findOneAndDelete(req.params)
+    Project.findOneAndDelete({ _id:req.params.id })
       .then(project=> res.json(project))
   }
 }
