@@ -3,6 +3,7 @@ const Project = require('../models/Project')
 module.exports = {
   index: (req, res)=> {
     console.log(`📨Received ${req.method} request at path: "${req.route.path}"🤝`)
+    console.log(req.ip)
     let name = req.query.name
     let lang = req.query.lang
     if (name) {
