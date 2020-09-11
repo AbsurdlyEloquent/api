@@ -3,8 +3,13 @@ const express = require('express')
 const cors = require('cors')
 const router = require('./server/router')
 
+const corsOptions = {
+  origin: 'https://absurdlyeloquent.github.io',
+  optionSuccessStatus: 200
+}
+
 const app = express();
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.use(express.json())
 
